@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+
+<project name="CNRail_DevOps_App" default="run">
+
+  <target name="run" description="">
+
+    <property name="toolkit.home" value="C:\Program Files\IBM\IIB\10.0.0.20" />
+
+    <property name="workspaces.dir" value="C:\Users\firoj.badsa\IBM\IIBT10\workspace" />
+
+    <property name="runtime.dir" value="C:\Program Files\IBM\IIB\10.0.0.20\server\bin" />
+
+   
+
+    <property name="appln.name" value="CNRail_DevOps_App" />
+
+    <property name="bar.name" value="${workspaces.dir}\${appln.name}\${appln.name}.bar" />
+
+    <antcall target="mqsideploybar" />
+
+  </target>
+
+  <!--
+
+    Target to build the broker archive using mqsicreatebar
+
+  -->
+
+  <target name="mqsicreatebar.buildbar">
+
+    <echo message="Building Broker Archive file: ${bar.name} " />
+
+    <exec executable="${toolkit.home}\tools\mqsicreatebar.exe" spawn="false">
+
+      <arg value="-data" />
+
+      <arg value="${workspaces.dir}" />
+
+      <arg value="-b" />
+
+      <arg value="${bar.name}" />
+
+      <arg value="-a" />
+
+      <arg value="CNRail_DevOps_App" />   
+
+    </exec>
+
+    <echo message="Completed building Broker Archive file - ${bar.name} " />
+
+  </target>
+
+  <!--
+
+    Target to deploy the broker archive using mqsideploybar
+
+  -->
+
+  <target name="mqsideploybar" depends="mqsicreatebar.buildbar">
+  
+	<property name="Brokername" value="TESTNODE_firoj.badsa" />
+	<property name="execution.group" value="default" />
+
+    <echo message="Deploying Broker Archive file: ${bar.name} " />
+    
+<!--    <exec executable="${runtime.dir}\mqsideployscript.bat" spawn="false">
+
+      <arg value="${Brokername}" />
+      <arg value="-e" />
+      <arg value="${execution.group}" />
+      <arg value="-a" />
+      <arg value="${workspaces.dir}\${appln.name}\${appln.name}.bar" />
+
+    </exec> -->
+	  
+    	<exec executable="${runtime.dir}/mqsiprofile.cmd" spawn="false" logerror="true" failonerror="false">
+		<arg value="&amp;"/>
+		<arg value="${runtime.dir}\mqsideploy.exe" />
+		<arg value="${Brokername}" />
+		<arg value="-e" />
+		<arg value="${execution.group}" />
+		<arg value="-a" />
+		<arg value="${workspaces.dir}\${appln.name}\${appln.name}.bar" />
+	</exec> 	  
+
+    <echo message="Completed building Broker Archive file - ${bar.name} " />
+	 
+	<exec executable="${runtime.dir}/mqsiprofile.cmd" spawn="false" logerror="true" failonerror="false">
+		<arg value="&amp;"/>
+	 	<arg value="${runtime.dir}\mqsichangetrace" />
+		<arg value="${Brokername}"/>
+		<arg value="-u" />
+		<arg value="-e" />
+		<arg value="${execution.group}" />
+		<arg value="-k" />
+		<arg value="CNRail_DevOps_App" />
+		<arg value="-f" />
+		<arg value="cnrail_acn_sampler" />
+		<arg value="-l" />
+		<arg value="debug" />
+	</exec> 
+	  
+	<echo message="User trace Enabled - ${bar.name} " />  
+
+  </target>
+
+</project>
