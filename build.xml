@@ -57,7 +57,7 @@
     <echo message="Building Broker Archive file: ${bar.name} " />
     <exec executable="${toolkit.home}\tools\mqsicreatebar.exe" spawn="false">
       <arg value="-data" />
-      <arg value="${workspaces.dir}" />
+      <arg value="C:\Users\firoj.badsa\IBM\IIBT10\workspace" />
       <arg value="-b" />
       <arg value="C:\Firoj\bctplugin_dir\ant_scripts\BARfiles\mqTransferFlow.bar" />
       <arg value="-a" />
