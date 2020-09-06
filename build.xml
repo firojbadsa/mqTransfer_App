@@ -76,7 +76,10 @@
  
   <echo message="Deploying Broker Archive file: ${APP.NAME}-${BUILD.NUMBER}.bar " />  
   
-  <java classname="com.ibm.broker.config.util.Deploy" failonerror="true" fork="true">
+   <exec executable="${runtime.dir}/mqsiprofile.cmd" spawn="false" logerror="true" failonerror="false">
+   </exec>
+	
+   <java classname="com.ibm.broker.config.util.Deploy" failonerror="true" fork="true">
    <arg value="TESTNODE_firoj.badsa" />
    <arg value="-e" />
    <arg value="default" />
@@ -88,6 +91,9 @@
 		</fileset>
 	</classpath>
    </java>
+	
+   <exec executable="${runtime.dir}/mqsiprofile.cmd" spawn="false" logerror="true" failonerror="false">
+   </exec> 	  	
   
   <echo message="Completed building Broker Archive file - ${APP.NAME}-${BUILD.NUMBER}.bar " />
  </target> 
