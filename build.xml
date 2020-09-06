@@ -59,7 +59,9 @@
       <arg value="-data" />
       <arg value="${workspaces.dir}" />
       <arg value="-b" />
-      <arg value="C:\Firoj\bctplugin_dir\ant_scripts\BARfiles\mqTransferFlow.bar}" />
+      <arg value="C:\Firoj\bctplugin_dir\ant_scripts\BARfiles\mqTransferFlow.bar" />
+      <arg value="-o" />
+      <arg value="mqTransfer_App\acit\ibm\acn\mqTransferFlow.msgflow" />
     </exec>
     <echo message="Completed building Broker Archive file - ${bar.name} " />
   </target>
