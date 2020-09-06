@@ -12,7 +12,7 @@
 	<property name="BARDIR" value="bars" />
 	<property name="APP.NAME" value="Coverage1" />
 	<property name="toolkit.home" value="C:\Program Files\IBM\IIB\10.0.0.20" />
-	<property name="workspaces.dir" value="C:\Program Files (x86)\Jenkins\workspace" />
+	<property name="workspaces.dir" value="C:\Program Files (x86)\Jenkins\workspace\mqTransfer_App" />
 
 	
 <target name="init" description="">	
@@ -60,8 +60,6 @@
       <arg value="${workspaces.dir}" />
       <arg value="-b" />
       <arg value="C:\Firoj\bctplugin_dir\ant_scripts\BARfiles\mqTransferFlow.bar}" />
-      <arg value="-a" />
-      <arg value="mqTransfer_App" />   
     </exec>
     <echo message="Completed building Broker Archive file - ${bar.name} " />
   </target>
