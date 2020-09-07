@@ -112,7 +112,7 @@
 	<echo message="turn on tracing" />
 	<echo message="================================" />
 	
-	<exec executable="mqsichangetrace">
+	<exec executable="${runtime.dir}\mqsichangetrace">
 		<arg value="TESTNODE_firoj.badsa"/>
 		<arg value="-u"/>
 		<arg value="-e"/>
@@ -140,7 +140,7 @@
 	<echo message="Generate logs (xml)" />
 	<echo message="================================" />
 	
-	<exec executable="mqsireadlog">
+	<exec executable="${runtime.dir}\mqsireadlog">
 		<arg value="TESTNODE_firoj.badsa"/>
 		<arg value="-u"/>
 		<arg value="-e"/>
@@ -153,7 +153,7 @@
 	<echo message="Generate logs (txt)" />
 	<echo message="================================" />
 	
-	<exec executable="mqsiformatlog">
+	<exec executable="${runtime.dir}\mqsiformatlog">
 		<arg value="-i"/>
 		<arg value="C:\Firoj\devOps\trace_file\usertrace.xml"/>
 		<arg value="-o"/>
@@ -165,7 +165,7 @@
 	<echo message="Turn off tracing" />
 	<echo message="================================" />		
 	
-	<exec executable="mqsichangetrace">
+	<exec executable="${runtime.dir}\mqsichangetrace">
 		<arg value="TESTNODE_firoj.badsa"/>
 		<arg value="-u"/>
 		<arg value="-e"/>
