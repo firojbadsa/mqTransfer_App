@@ -21,7 +21,7 @@
 		
 	<path id="project.classpath">	
 		<pathelement location="C:\utils\bct\MB-precise-sonarplugin-3.112-v6.7.jar" />
-		<pathelement location="C:\utils\bct\com.ibm.mqjms.jar" />
+		<pathelement location="C:\\utils\\bct\\com.ibm.mqjms.jar" />
 		<pathelement location="C:\utils\bct\commons-io-2.0.1.jar"/>
 		<pathelement location="C:\utils\bct\commons-lang-2.6.jar"/>
 		<pathelement location="C:\utils\bct\slf4j-api-1.7.5.jar"/>		
