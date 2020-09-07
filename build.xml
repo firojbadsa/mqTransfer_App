@@ -30,7 +30,11 @@
 		<pathelement location="C:\utils\bct\xmlpull-1.1.3.1.jar"/>
 		
 		<pathelement location="C:\utils\bct\plexus-utils-3.0.21.jar"/>
-		<pathelement location="C:\utils\bct\xpp3-1.1.3.3.jar"/>				
+		<pathelement location="C:\utils\bct\xpp3-1.1.3.3.jar"/>	
+		
+		<pathelement location="C:\utils\bct\com.ibm.mq.allclient.jar"/>
+		<pathelement location="C:\utils\bct\javax.jms-api-2.0.1.jar"/>
+		<pathelement location="C:\utils\bct\com.ibm.mqjms-6.0.1.1.jar"/>
 		
     </path>
 
