@@ -76,7 +76,7 @@
  
   <echo message="Deploying Broker Archive file: ${APP.NAME}-${BUILD.NUMBER}.bar " />  
   
-   <exec executable="${runtime.dir}/mqsiprofile.cmd" spawn="false" logerror="true" failonerror="false">
+   <exec executable="C:\Program Files\IBM\IIB\10.0.0.20\mqsiprofile.cmd" spawn="false" logerror="true" failonerror="false">
    </exec>
 	
    <java classname="com.ibm.broker.config.util.Deploy" failonerror="true" fork="true">
