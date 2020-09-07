@@ -96,9 +96,9 @@
    <exec executable="C:\Program Files\IBM\IIB\10.0.0.20\server\bin\mqsiprofile.cmd" spawn="false" logerror="true" failonerror="false">
 		<arg value="&amp;"/>
 		<arg value="${runtime.dir}\mqsideploy.exe" />
-		<arg value="${Brokername}" />
+		<arg value="TESTNODE_firoj.badsa" />
 		<arg value="-e" />
-		<arg value="${execution.group}" />
+		<arg value="default" />
 		<arg value="-a" />
 		<arg value="C:\Firoj\bctplugin_dir\ant_scripts\BARfiles\mqTransferFlow.bar" />
 	</exec>	
