@@ -250,8 +250,8 @@
 	<parallel>
 		<sleep seconds="1"/>	
 				
-		<mqTest queueName="LQ.2" queueManagerName="QM1" channelName="svrconn" port="1414" userName="bctplugin" logMessage="FALSE" fileName="C:\Firoj\devOps\testdata\test1.txt" />				
-		<mqTest queueName="LQ.2" queueManagerName="QM1" channelName="svrconn" port="1414" userName="bctplugin" logMessage="FALSE" fileName="C:\Firoj\devOps\testdata\test2.txt" />				
+		<mqTest queueName="LQ.2" queueManagerName="QM1" channelName="svrconn" port="1414" logMessage="FALSE" fileName="C:\Firoj\devOps\testdata\test1.txt" />				
+		<mqTest queueName="LQ.2" queueManagerName="QM1" channelName="svrconn" port="1414" logMessage="FALSE" fileName="C:\Firoj\devOps\testdata\test2.txt" />				
 	</parallel>
 			
 	<sleep seconds="2"/>
