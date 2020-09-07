@@ -114,7 +114,7 @@
 	
 	<exec executable="C:\Program Files\IBM\IIB\10.0.0.20\server\bin\mqsiprofile.cmd" spawn="false" logerror="true" failonerror="false">
 		<arg value="&amp;"/>
-	        <arg value="${runtime.dir}\mqsichangetrace">
+	        <arg value="${runtime.dir}\mqsichangetrace"/>
 		<arg value="TESTNODE_firoj.badsa"/>
 		<arg value="-u"/>
 		<arg value="-e"/>
@@ -144,7 +144,7 @@
 	
         <exec executable="C:\Program Files\IBM\IIB\10.0.0.20\server\bin\mqsiprofile.cmd" spawn="false" logerror="true" failonerror="false">
 		<arg value="&amp;"/>		
-		<arg value="${runtime.dir}\mqsireadlog">
+		<arg value="${runtime.dir}\mqsireadlog"/>
 		<arg value="TESTNODE_firoj.badsa"/>
 		<arg value="-u"/>
 		<arg value="-e"/>
@@ -159,7 +159,7 @@
 	
 	<exec executable="C:\Program Files\IBM\IIB\10.0.0.20\server\bin\mqsiprofile.cmd" spawn="false" logerror="true" failonerror="false">
 		<arg value="&amp;"/>	
-		<arg value="${runtime.dir}\mqsiformatlog">
+		<arg value="${runtime.dir}\mqsiformatlog"/>
 		<arg value="-i"/>
 		<arg value="C:\Firoj\devOps\trace_file\usertrace.xml"/>
 		<arg value="-o"/>
@@ -173,7 +173,7 @@
 	
 	<exec executable="C:\Program Files\IBM\IIB\10.0.0.20\server\bin\mqsiprofile.cmd" spawn="false" logerror="true" failonerror="false">
 		<arg value="&amp;"/>	
-		<arg value="${runtime.dir}\mqsichangetrace">
+		<arg value="${runtime.dir}\mqsichangetrace"/>
 		<arg value="TESTNODE_firoj.badsa"/>
 		<arg value="-u"/>
 		<arg value="-e"/>
