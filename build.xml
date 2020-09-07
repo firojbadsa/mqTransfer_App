@@ -48,6 +48,7 @@
 	<typedef name="mqTest" 		 
 		 classname="au.com.bettercodingtools.sonar.messagebrokersonar.anttasks.SendMQMessageTask" >
 		<classpath refid="project.classpath" />
+		<echo message="Entered inside mqTest " />
 	</typedef>
 	
 	<property environment="env" />
