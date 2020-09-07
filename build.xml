@@ -77,25 +77,22 @@
   <echo message="Deploying Broker Archive file: ${APP.NAME}-${BUILD.NUMBER}.bar " />  
   
    <exec executable="C:\Program Files\IBM\IIB\10.0.0.20\server\bin\mqsiprofile.cmd" spawn="false" logerror="true" failonerror="false">
+   <arg value="&amp;"/>
+	   <java classname="com.ibm.broker.config.util.Deploy" failonerror="true" fork="true">
+	   <arg value="TESTNODE_firoj.badsa" />
+	   <arg value="-e" />
+	   <arg value="default" />
+	   <arg value="-a" />   
+	   <arg value="BARfiles\codecoverage.bar" />   
+		<classpath>
+			<fileset dir="C:/Program Files/IBM/IIB/10.0.0.20/tools/plugins/com.ibm.etools.mft.config_10.0.0.20">
+				<include name="**/*.jar"/>
+			</fileset>
+		</classpath>
+	   </java>
    </exec>
-	
-   <java classname="com.ibm.broker.config.util.Deploy" failonerror="true" fork="true">
-   <arg value="TESTNODE_firoj.badsa" />
-   <arg value="-e" />
-   <arg value="default" />
-   <arg value="-a" />   
-   <arg value="BARfiles\codecoverage.bar" />   
-	<classpath>
-		<fileset dir="C:/Program Files/IBM/IIB/10.0.0.20/tools/plugins/com.ibm.etools.mft.config_10.0.0.20">
-			<include name="**/*.jar"/>
-		</fileset>
-	</classpath>
-   </java>
-	
-   <exec executable="${runtime.dir}/mqsiprofile.cmd" spawn="false" logerror="true" failonerror="false">
-   </exec> 	  	
-  
-  <echo message="Completed building Broker Archive file - ${APP.NAME}-${BUILD.NUMBER}.bar " />
+
+	<echo message="Completed building Broker Archive file - ${APP.NAME}-${BUILD.NUMBER}.bar " />
  </target> 
 
  <target name="run" description="" depends="mqsideploybar">
