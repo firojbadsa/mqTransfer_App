@@ -4,7 +4,7 @@ BROKER SCHEMA acit.ibm.acn
 CREATE COMPUTE MODULE mqTransferFlow_transformInput
 	CREATE FUNCTION Main() RETURNS BOOLEAN
 	BEGIN
-		-- CALL CopyMessageHeaders();
+		 CALL CopyMessageHeaders();
 		-- CALL CopyEntireMessage();
 		
 		SET OutputRoot.XMLNSC.Root.Emp = 'ABC';
