@@ -157,7 +157,7 @@
 		<arg value="-e"/>
 		<arg value="default"/>
 		<arg value="-o"/>
-		<arg value="C:\Firoj\devOps\trace_file\usertrace.xml"/>		
+		<arg value="C:\Firoj\bctplugin_dir\trace_file\usertrace.xml"/>		
 	</exec>
 	
 	<echo message="================================" />
@@ -168,9 +168,9 @@
 		<arg value="&amp;"/>	
 		<arg value="${runtime.dir}\mqsiformatlog"/>
 		<arg value="-i"/>
-		<arg value="C:\Firoj\devOps\trace_file\usertrace.xml"/>
+		<arg value="C:\Firoj\bctplugin_dir\trace_file\usertrace.xml"/>
 		<arg value="-o"/>
-		<arg value="C:\Firoj\devOps\trace_file\usertrace.txt"/>		
+		<arg value="C:\Firoj\bctplugin_dir\trace_file\usertrace.txt"/>		
 	</exec>
 	
 
@@ -210,10 +210,10 @@
 	<echo message="===============================================" />
         	
 	<java classname="au.com.bettercodingtools.sonar.messagebrokersonar.standalone.ConsumeTraceStandAlone" failonerror="true" fork="true">
-		<arg value="C:\Firoj\devOps\coveragetemp" />
+		<arg value="C:\Firoj\bctplugin_dir\coveragetemp" />
 		<arg value="N" />
-		<arg value="C:\Firoj\devOps\trace_file\usertrace.txt" />
-		<arg value="C:\Firoj\devOps\TestCoverage\CodeCoverage" />
+		<arg value="C:\Firoj\bctplugin_dir\trace_file\usertrace.txt" />
+		<arg value="C:\Program Files (x86)\Jenkins\workspace\mqTransfer_App" />
 		
 		<classpath>			
 			<path refid="project.classpath"/>
