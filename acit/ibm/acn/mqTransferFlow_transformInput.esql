@@ -9,6 +9,8 @@ CREATE COMPUTE MODULE mqTransferFlow_transformInput
 		
 		SET OutputRoot.XMLNSC.Root.Emp = 'ABC';
 		SET OutputRoot.XMLNSC.Root.Id = '123';
+		SET OutputRoot.XMLNSC.Root.Salary = '999';
+		SET OutputRoot.XMLNSC.Root.Add = 'dead end';
 		
 		RETURN TRUE;
 	END;
